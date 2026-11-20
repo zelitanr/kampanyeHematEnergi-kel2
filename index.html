@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELI — Studi & Kampanye Hemat Energi Listrik | Kelompok 2 PPLG XI-2</title>
+
+    <!-- Google Fonts: Poppins & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js CDN & Data JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="data/data-energi.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- ================= NAVBAR ================= -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand" onclick="showPage('beranda')">
+                <div class="brand-icon">🌱</div>
+                <div class="brand-title">
+                    HELI
+                    <span class="brand-subtitle">Studi & Kampanye Energi</span>
+                </div>
+            </div>
+
+            <!-- Tombol Hamburger Mobile -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu navigasi">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Menu Navigasi -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#beranda" data-page="beranda" onclick="showPage('beranda'); return false;"
+                        class="active">Beranda</a></li>
+                <li><a href="#tentang" data-page="tentang" onclick="showPage('tentang'); return false;">Tentang</a></li>
+                <li><a href="#data" data-page="data" onclick="showPage('data'); return false;">Data & Fakta</a></li>
+                <li><a href="#aksi" data-page="aksi" onclick="showPage('aksi'); return false;"> Aksi Nyata</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ================= FASE 1: HALAMAN BERANDA ================= -->
+        <section id="beranda">
+            <div class="hero">
+                <span class="eyebrow-tag">Kampanye Edukasi • Kelompok 2 PPLG XI-2</span>
+                <p class="tagline"> Hemat listrik, Hemat energi</p>
+                <h1>Mari jaga keselamatan bumi ini dengan hemat energi listrik</h1>
+                <p class="pengantar">
+                    Setiap harinya kita pasti tidak jauh dalam penggunaan listrik. Kita memakai lampu untuk menerangi,
+                    menyalakan kipas agar tidak kepanasan, menyalakan komputer dengan charger yang terpasang. Perubahan
+                    besar dimulai dari langkah kecil, mari buat perubahan positif untuk menyelamatkan bumi kita mulai
+                    dari diri sendiri.
+                </p>
+                <div class="hero-actions">
+                    <button class="tombol" onclick="showPage('tentang')">Selengkapnya →</button>
+                    <button class="tombol tombol-sekunder" onclick="showPage('data')">Lihat Data & Fakta ↗</button>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="hero-image-wrapper">
+                    <img src="https://i.pinimg.com/736x/17/f1/dc/17f1dc2793506279473cdc31ea7daec0.jpg"
+                        onerror="this.onerror=null; this.src='assets/heli3.jpeg';"
+                        alt="Panel Surya dan Energi Terbarukan Ramah Lingkungan">
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= FASE 1: HALAMAN TENTANG ================= -->
+        <section id="tentang">
+            <div class="page-header">
+                <span class="page-badge">Tentang Inisiatif</span>
+                <h1>Tentang Kampanye</h1>
+                <p class="pengantar">
+                    <b>HELI (Hemat Listrik)</b> adalah project website yang bertujuan untuk mengajak dan mengedukasi
+                    khalayak ramai tentang pentingnya sadar penggunaan hemat listrik dalam kehidupan sehari-hari,
+                    didukung aksi nyata dengan membangun langkah-langkah mulai dari kebiasaan kecil di lingkungan
+                    sekolah maupun rumah.
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <!-- Alasan Mengapa Penting -->
+                <div class="alasan">
+                    <div class="card-heading-group">
+                        <span class="card-num">01</span>
+                        <h2>Mengapa penting</h2>
+                    </div>
+                    <p>
+                        Penghematan energi adalah unsur yang penting dari sebuah kebijakan energi. Penghematan energi
+                        menurunkan konsumsi energi dan permintaan energi per kapita, sehingga dapat menutup meningkatnya
+                        kebutuhan energi akibat pertumbuhan populasi. Hal ini mengurangi naiknya biaya energi, dan dapat
+                        mengurangi kebutuhan pembangkit energi atau impor energi. Berkurangnya permintaan energi dapat
+                        memberikan fleksibilitas dalam memilih metode produksi energi.
+                    </p>
+                    <a href="https://binus.ac.id/character-building/2022/07/pentingnya-menghemat-energi/"
+                        target="_blank" rel="noopener noreferrer">
+                        ↗ Referensi artikel di binus.ac.id
+                    </a>
+                </div>
+
+                <!-- Tujuan Kampanye -->
+                <div class="tujuan">
+                    <div class="card-heading-group">
+                        <span class="card-num">02</span>
+                        <h2>Tujuan kampanye</h2>
+                    </div>
+                    <ol>
+                        <li><b>Mengajak seluruh orang</b> untuk memiliki kesadaran mendalam akan pentingnya efisiensi
+                            dan penghematan energi.</li>
+                        <li><b>Menumbuhkan kebiasaan-kebiasaan positif</b> yang mendorong pengurangan pemborosan listrik
+                            dalam rutinitas harian.</li>
+                        <li><b>Mengedukasi dampak</b> dari kebiasaan boros energi terhadap stabilitas lingkungan dan
+                            masa depan bumi.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Identitas Pembuat -->
+            <div class="kelompok">
+                <span class="kelompok-badge">Tim Pengembang Project</span>
+                <h2>Identitas Pembuat</h2>
+                <div class="kelompok-details">
+                    <div class="kelompok-item">
+                        <p>Nama Kelompok</p>
+                        <b>Kelompok 2</b>
+                    </div>
+                    <div class="kelompok-item">
+                        <p>Rombel / Jurusan</p>
+                        <b>PPLG XI-2</b>
+                    </div>
+                    <div class="kelompok-item">
+                        <p>Mata Pelajaran</p>
+                        <b>Produktif</b>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= FASE 2: HALAMAN DATA & FAKTA ================= -->
+        <section id="data">
+            <div class="data-header">
+                <span class="page-badge">Riset Empiris Kelas XI • 636 Responden</span>
+                <h1>Data & Fakta Perilaku Hemat Energi</h1>
+                <p class="pengantar">
+                    Hasil kuesioner teragregasi terhadap 636 responden siswa kelas XI dengan tingkat partisipasi 99.4%,
+                    mengukur 10 butir tindakan efisiensi energi listrik berskala Likert 1–4.
+                </p>
+                <div id="statusPemberitahuan" class="status-banner">Memuat data kuesioner...</div>
+            </div>
+
+            <!-- 4 Metric Cards -->
+            <div class="stats-grid" id="statsGrid">
+                <!-- Diisi otomatis oleh JavaScript dari JSON -->
+            </div>
+
+            <!-- Sorotan Temuan Utama -->
+            <div class="insights-card">
+                <h3>Sorotan Temuan Kuesioner Siswa</h3>
+                <div class="insights-grid">
+                    <div class="insight-item">
+                        <div class="insight-item-title"> 3 Kebiasaan Tertinggi (Paling Rutin)</div>
+                        <ul>
+                            <li>
+                                <span>P01 - Praktik hemat energi sehari-hari</span>
+                                <span class="insight-score">3.51 / 4.00</span>
+                            </li>
+                            <li>
+                                <span>P02 - Tindakan nyata di lab, bengkel, kelas, rumah</span>
+                                <span class="insight-score">3.46 / 4.00</span>
+                            </li>
+                            <li>
+                                <span>P06 - Cabut kabel charger/steker setelah dipakai</span>
+                                <span class="insight-score">3.45 / 4.00</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="insight-item">
+                        <div class="insight-item-title"> 3 Area Evaluasi (Prioritas Kampanye)</div>
+                        <ul>
+                            <li>
+                                <span>P04 - Batasi penggunaan gawai/laptop saat idle</span>
+                                <span class="insight-score">3.22 / 4.00</span>
+                            </li>
+                            <li>
+                                <span>P09 - Berani menegur/mengajak teman hemat listrik</span>
+                                <span class="insight-score">3.22 / 4.00</span>
+                            </li>
+                            <li>
+                                <span>P05 - Pilih fasilitas/transportasi hemat energi</span>
+                                <span class="insight-score">3.30 / 4.00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid Visualisasi Grafik Chart.js -->
+            <div class="charts-grid">
+                <!-- Grafik 1: Perbandingan Skor per Jurusan -->
+                <div class="chart-card">
+                    <div class="chart-card-header">
+                        <div class="chart-title-area">
+                            <span class="chart-badge">Grafik Batang</span>
+                            <h2>Rata-Rata Skor Perilaku Berdasarkan Jurusan</h2>
+                        </div>
+                        <!-- Toggle Button -->
+                        <div class="chart-toggle-group">
+                            <button id="btnViewJurusan" class="chart-toggle-btn active"
+                                onclick="toggleJurusanGaya('jurusan')">Jurusan</button>
+                            <button id="btnViewGaya" class="chart-toggle-btn" onclick="toggleJurusanGaya('gaya')">Gaya
+                                Belajar</button>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="chartPerbandingan"></canvas>
+                    </div>
+                    <div class="chart-caption">
+                        <p>Perbandingan skor perilaku hemat energi di 7 program keahlian kelas XI. Program Pemasaran
+                            (PMN: 3.51) dan Perhotelan (HTL: 3.46) memimpin, sementara PPLG (3.24) menjadi fokus
+                            penguatan aksi kampanye kelompok.</p>
+                    </div>
+                </div>
+
+                <!-- Grafik 2: Donut Kategori Perilaku Siswa -->
+                <div class="chart-card">
+                    <div class="chart-card-header">
+                        <div class="chart-title-area">
+                            <span class="chart-badge">Grafik Donut</span>
+                            <h2>Distribusi Kategori Perilaku Responden</h2>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="chartKebiasaan"></canvas>
+                    </div>
+                    <div class="chart-caption">
+                        <p>Sebanyak 59.4% responden (378 siswa) tergolong kategori Sangat Baik dan 36.8% (234 siswa)
+                            Baik. Hanya 3.8% siswa yang masih berada pada kategori Cukup dan Kurang.</p>
+                    </div>
+                </div>
+
+                <!-- Grafik 3: Evaluasi 10 Butir Instrumen Kuesioner (Horizontal Bar) -->
+                <div class="chart-card chart-card-full">
+                    <div class="chart-card-header">
+                        <div class="chart-title-area">
+                            <span class="chart-badge">Evaluasi Instrumen Butir</span>
+                            <h2>Evaluasi 10 Butir Tindakan Hemat Energi (Skor Tertinggi ke Terendah)</h2>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="chartKesadaran"></canvas>
+                    </div>
+                    <div class="chart-caption">
+                        <p>Tindakan mencabut charger (P06) dan mematikan peralatan sebelum pulang (P10) memiliki
+                            kepatuhan tinggi, sedangkan keberanian menegur rekan satu kelas (P09) dan membatasi gawai
+                            (P04) memerlukan dorongan kultur kolektif.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Keterangan Sumber Data -->
+            <div class="sumber-data-card" id="sumberDataCard">
+                <div class="sumber-info">
+                    <h3>Sumber & Metodologi Data</h3>
+                    <p id="teksSumber">Sumber: Kuesioner - ENERGI XI (Perilaku) (Responses).xlsx • 636 Responden Terdata
+                    </p>
+                    <p class="sumber-note" id="teksCatatan">
+                        Data kuesioner teragregasi secara otomatis dari <code>data/data-energi.json</code> menggunakan
+                        fungsi JavaScript <code>fetch()</code>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= FASE 3: AKSI & REKOMENDASI ================= -->
+
+<section id="aksi">
+
+    <!-- HERO AKSI -->
+    <div class="aksi-hero">
+        <span class="page-badge">Fase 3 • Aksi Nyata</span>
+
+        <h1>Perubahan Dimulai dari Aksi Kecil</h1>
+
+        <p>
+            Menghemat energi bukan hanya tentang mengetahui pentingnya listrik,
+            tetapi juga tentang bagaimana kita menerapkannya dalam kehidupan
+            sehari-hari. Yuk, mulai lakukan perubahan dari diri sendiri!
+        </p>
+
+        <a href="#rekomendasi" class="tombol">
+            Mulai Bertindak →
+        </a>
+    </div>
+
+
+    <!-- REKOMENDASI -->
+    <div class="aksi-content" id="rekomendasi">
+
+        <div class="page-header">
+            <span class="page-badge">Berdasarkan Hasil Penelitian</span>
+            <h1>Aksi & Rekomendasi Hemat Energi</h1>
+
+            <p class="pengantar">
+                Berdasarkan hasil kuesioner terhadap 636 siswa kelas XI,
+                terdapat beberapa kebiasaan yang masih perlu ditingkatkan.
+                Berikut rekomendasi tindakan nyata yang dapat diterapkan
+                di lingkungan sekolah maupun rumah.
+            </p>
+        </div>
+
+
+        <div class="rekomendasi-grid">
+
+            <!-- Rekomendasi 1 -->
+            <div class="rekomendasi-card">
+                <div class="rekomendasi-icon">💻</div>
+                <span class="rekomendasi-number">01</span>
+
+                <h3>Batasi Penggunaan Perangkat Elektronik</h3>
+
+                <p>
+                    P04 memperoleh skor 3,22 dari 4,00. Artinya,
+                    kebiasaan membatasi penggunaan gawai dan laptop
+                    ketika tidak digunakan masih perlu ditingkatkan.
+                </p>
+
+                <div class="aksi-tip">
+                    <strong>Aksi nyata:</strong>
+                    Matikan layar, aktifkan mode tidur, atau matikan
+                    perangkat ketika tidak digunakan dalam waktu lama.
+                </div>
+            </div>
+
+
+            <!-- Rekomendasi 2 -->
+            <div class="rekomendasi-card">
+                <div class="rekomendasi-icon">🤝</div>
+                <span class="rekomendasi-number">02</span>
+
+                <h3>Saling Mengingatkan Teman</h3>
+
+                <p>
+                    P09 memperoleh skor 3,22 dari 4,00 dan menjadi salah
+                    satu kebiasaan dengan skor terendah. Kesadaran untuk
+                    mengajak teman berhemat listrik perlu diperkuat.
+                </p>
+
+                <div class="aksi-tip">
+                    <strong>Aksi nyata:</strong>
+                    Ingatkan teman untuk mematikan lampu, kipas, dan
+                    komputer ketika sudah tidak digunakan.
+                </div>
+            </div>
+
+
+            <!-- Rekomendasi 3 -->
+            <div class="rekomendasi-card">
+                <div class="rekomendasi-icon">🚶</div>
+                <span class="rekomendasi-number">03</span>
+
+                <h3>Pilih Transportasi Hemat Energi</h3>
+
+                <p>
+                    P05 memperoleh skor 3,30 dari 4,00. Pemilihan
+                    fasilitas dan transportasi yang lebih hemat energi
+                    masih dapat ditingkatkan.
+                </p>
+
+                <div class="aksi-tip">
+                    <strong>Aksi nyata:</strong>
+                    Berjalan kaki untuk jarak dekat atau menggunakan
+                    transportasi bersama jika memungkinkan.
+                </div>
+            </div>
+
+
+            <!-- Rekomendasi 4 -->
+            <div class="rekomendasi-card">
+                <div class="rekomendasi-icon">🔌</div>
+                <span class="rekomendasi-number">04</span>
+
+                <h3>Cabut Charger Setelah Digunakan</h3>
+
+                <p>
+                    P06 memperoleh skor 3,45 dari 4,00. Kebiasaan ini
+                    sudah tergolong baik dan perlu terus dipertahankan.
+                </p>
+
+                <div class="aksi-tip">
+                    <strong>Aksi nyata:</strong>
+                    Biasakan mencabut charger dan steker setelah
+                    selesai digunakan.
+                </div>
+            </div>
+
+
+            <!-- Rekomendasi 5 -->
+            <div class="rekomendasi-card">
+                <div class="rekomendasi-icon">💡</div>
+                <span class="rekomendasi-number">05</span>
+
+                <h3>Periksa Peralatan Sebelum Meninggalkan Ruangan</h3>
+
+                <p>
+                    P02 memperoleh skor 3,46 dari 4,00. Tindakan nyata
+                    menghemat energi di kelas, laboratorium, bengkel,
+                    dan rumah perlu terus dibiasakan.
+                </p>
+
+                <div class="aksi-tip">
+                    <strong>Aksi nyata:</strong>
+                    Pastikan lampu, kipas, komputer, dan peralatan
+                    listrik lainnya sudah dimatikan sebelum pulang.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- TANTANGAN 7 HARI -->
+    <div class="tantangan-section">
+
+        <div class="page-header">
+            <span class="page-badge">Mulai dari Diri Sendiri</span>
+
+            <h1>Tantangan 7 Hari Hemat Energi</h1>
+
+            <p class="pengantar">
+                Tidak perlu melakukan perubahan besar sekaligus.
+                Coba selesaikan tantangan sederhana berikut selama
+                tujuh hari untuk membangun kebiasaan hemat energi.
+            </p>
+        </div>
+
+
+        <div class="tantangan-card">
+
+            <div class="tantangan-header">
+                <div>
+                    <h2>Perjalanan Hemat Energi</h2>
+                    <p>Selesaikan semua tantangan di bawah ini!</p>
+                </div>
+
+                <div class="progress-number">
+                    <span id="progressText">0/7</span>
+                    <small>Hari selesai</small>
+                </div>
+            </div>
+
+
+            <div class="progress-bar">
+                <div id="progressFill"></div>
+            </div>
+
+
+            <div class="tantangan-list">
+
+                <label class="tantangan-item">
+                    <input type="checkbox" class="challenge-check">
+                    <span class="hari">01</span>
+                    <div>
+                        <strong>Hari Pertama</strong>
+                        <p>Matikan lampu ketika ruangan tidak digunakan.</p>
+                    </div>
+                </label>
+
+
+                <label class="tantangan-item">
+                    <input type="checkbox" class="challenge-check">
+                    <span class="hari">02</span>
+                    <div>
+                        <strong>Hari Kedua</strong>
+                        <p>Cabut charger setelah selesai digunakan.</p>
+                    </div>
+                </label>
+
+
+                <label class="tantangan-item">
+                    <input type="checkbox" class="challenge-check">
+                    <span class="hari">03</span>
+                    <div>
+                        <strong>Hari Ketiga</strong>
+                        <p>Matikan laptop atau komputer ketika tidak digunakan.</p>
+                    </div>
+                </label>
+
+
+                <label class="tantangan-item">
+                    <input type="checkbox" class="challenge-check">
+                    <span class="hari">04</span>
+                    <div>
+                        <strong>Hari Keempat</strong>
+                        <p>Periksa peralatan listrik sebelum meninggalkan kelas.</p>
+                    </div>
+                </label>
+
+
+                <label class="tantangan-item">
+                    <input type="checkbox" class="challenge-check">
+                    <span class="hari">05</span>
+                    <div>
+                        <strong>Hari Kelima</strong>
+                        <p>Ajak satu teman untuk melakukan kebiasaan hemat energi.</p>
+                    </div>
+                </label>
+
+
+                <label class="tantangan-item">
+                    <input type="checkbox" class="challenge-check">
+                    <span class="hari">06</span>
+                    <div>
+                        <strong>Hari Keenam</strong>
+                        <p>Kurangi penggunaan perangkat elektronik yang tidak diperlukan.</p>
+                    </div>
+                </label>
+
+
+                <label class="tantangan-item">
+                    <input type="checkbox" class="challenge-check">
+                    <span class="hari">07</span>
+                    <div>
+                        <strong>Hari Ketujuh</strong>
+                        <p>Evaluasi kebiasaan hemat energi selama satu minggu.</p>
+                    </div>
+                </label>
+
+            </div>
+
+
+            <div class="tantangan-footer">
+                <p id="challengeMessage">
+                    Yuk, mulai tantangan pertamamu hari ini!
+                </p>
+
+                <button class="tombol tombol-sekunder"
+                        onclick="resetChallenge()">
+                    Ulangi Tantangan
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- PENUTUP KAMPANYE -->
+    <div class="aksi-penutup">
+
+        <span class="page-badge">HELI • Hemat Listrik</span>
+
+        <h1>Jangan Hanya Tahu, Mulai Lakukan!</h1>
+
+        <p>
+            Masa depan bumi bukan hanya tanggung jawab satu orang.
+            Setiap tindakan kecil yang kita lakukan dapat menjadi
+            awal perubahan besar. Mulailah dari diri sendiri,
+            lingkungan sekolah, dan rumah.
+        </p>
+
+        <h2>Hemat Listrik, Hemat Energi, Selamatkan Bumi! 🌱</h2>
+
+        <button class="tombol"
+                onclick="showPage('beranda')">
+            Kembali ke Beranda ↑
+        </button>
+
+    </div>
+
+</section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="footer-content">
+            <p><span class="footer-highlight">Kelompok 7</span> — Studi & Kampanye Hemat Energi Listrik (HELI)</p>
+            <p>PPLG XI-2 • Mata Pelajaran Produktif • Harmoni Langkah Nyata untuk Kelestarian Lingkungan </p>
+        </div>
+    </footer>
+</body>
+
+</html>
